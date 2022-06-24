@@ -23,6 +23,7 @@ jobs:
         name: webpack artifacts
         path: public
     - name: npm install, and test
+test:
   runs-on: ubuntu-latest
   strategy:
     matrix:
@@ -35,8 +36,7 @@ jobs:
     with:
       node-version: ${{ matrix.node-version }}
   - name: Label approved pull requests
-  uses: abinoda/label-when-approved-action@1.0.5
-
+    uses: abinoda/label-when-approved-action@1.0.5
   - name: npm install, and test
     run: |
       npm install
