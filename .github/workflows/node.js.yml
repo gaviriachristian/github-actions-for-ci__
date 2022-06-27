@@ -34,9 +34,6 @@ jobs:
     uses: actions/setup-node@v1
     with:
       node-version: ${{ matrix.node-version }}
-  - name: Label approved pull requests
-  uses: abinoda/label-when-approved-action@1.0.5
-
   - name: npm install, and test
     run: |
       npm install
